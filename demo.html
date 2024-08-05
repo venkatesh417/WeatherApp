@@ -1,0 +1,27 @@
+<html>
+    <script>
+        async function checkWeather()
+        {
+            let api='https://api.openweathermap.org/data/2.5/weather?units=metric&appid=84ef40823269b5cd2d9a74c7802807d4&q='
+            let city=document.getElementById('city').value
+            let icon=document.querySelector('.weather-icon')
+            let response=await fetch(api+city)
+            let data=await response.json()
+            console.log(data)
+            console.log(data.name)
+            console.log(data.main.temp)
+            console.log(data.coord.lon)
+            console.log(data.weather[0].main)
+            if(data.weather[0].main=='Clouds')
+            {
+                 icon.src='cloudy.png'
+            }
+            
+        }
+    </script>
+    <input type="text" placeholder="Enter city name" id="city">
+    <button onclick="checkWeather()">Search</button>
+    <div class="icon">
+        <img src="rain.png" class="weather-icon">
+    </div>
+</html>

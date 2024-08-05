@@ -1,0 +1,59 @@
+<html>
+    <style>
+        .card
+        {
+            width:100%;
+            max-width:300px;
+            margin:100px auto 0px;
+            background-color: aqua;
+            padding:10px 30px;
+            border-radius:20px;
+            justify-content: space-between;
+            text-align: center;
+            
+        }
+        input
+        {
+            width:80%;
+            border-radius: 30px;
+            border:none;
+            outline: none;
+            font-size: 18px;
+            height:25px;
+            padding-left: 30px;
+        }
+        button
+        {
+            border:none;
+            border-radius: 30px;
+            height:25px;
+        }
+        h1
+        {
+            color:black;
+
+        }
+    </style>
+    <body id="bgcolor">
+    <div class="card">
+        <input type="text" placeholder="Enter any color" id="color">
+        <button onclick="change()">Click</button>        
+    </div>
+    <marquee direction="right"><h1 id="text"></h1></marquee>
+</body>
+    <script>
+        function change()
+        {
+            
+            
+            let color=document.getElementById('color').value
+            console.log(color)
+    
+            document.getElementById('bgcolor').style.backgroundColor=color
+            document.getElementById('text').innerHTML="Please refresh the page"
+            document.querySelector('.card').style.display='none'
+            }
+    
+
+    </script>
+</html>
